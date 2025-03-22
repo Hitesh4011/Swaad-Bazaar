@@ -2,47 +2,95 @@
 let currentUser = null;
 
 // Make functions globally accessible
-window.showAuthModal = showAuthModal;
+window.showLoginModal = showLoginModal;
+window.showRegisterModal = showRegisterModal;
 window.closeAuthModal = closeAuthModal;
 window.handleLogin = handleLogin;
+window.handleRegister = handleRegister;
 window.handleLogout = handleLogout;
 
-// Hardcoded user for demo
+// Hardcoded demo user
 const demoUser = {
     email: 'hitesh@gmail.com',
     password: '1234',
     name: 'Hitesh'
 };
 
-function showAuthModal(type = 'login') {
+function showLoginModal() {
+    closeAuthModal(); // Close any open modal first
     const modal = document.createElement('div');
     modal.className = 'auth-modal';
     modal.innerHTML = `
         <div class="auth-content">
-            <h2>${type === 'login' ? 'Login' : 'Register'}</h2>
-            <form id="${type}Form">
+            <h2>Login</h2>
+            <form id="loginForm">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" required>
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
                 </div>
-                <button type="submit" class="submit-btn">${type === 'login' ? 'Login' : 'Register'}</button>
+                <button type="submit" class="submit-btn">Login</button>
             </form>
+            <p class="switch-auth">
+                Don't have an account? <a href="#" onclick="showRegisterModal()">Register</a>
+            </p>
             <button class="close-btn" onclick="closeAuthModal()">×</button>
         </div>
     `;
     document.body.appendChild(modal);
 
-    // Add event listener to the form
-    const form = document.getElementById(`${type}Form`);
-    form.addEventListener('submit', (e) => {
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
         handleLogin(email, password);
+    });
+}
+
+function showRegisterModal() {
+    closeAuthModal(); // Close any open modal first
+    const modal = document.createElement('div');
+    modal.className = 'auth-modal';
+    modal.innerHTML = `
+        <div class="auth-content">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <input type="password" id="register-confirm-password" required>
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+            <p class="switch-auth">
+                Already have an account? <a href="#" onclick="showLoginModal()">Login</a>
+            </p>
+            <button class="close-btn" onclick="closeAuthModal()">×</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('registerForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('register-name').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+        const confirmPassword = document.getElementById('register-confirm-password').value;
+        handleRegister(name, email, password, confirmPassword);
     });
 }
 
@@ -54,14 +102,41 @@ function closeAuthModal() {
 }
 
 function handleLogin(email, password) {
-    if (email === demoUser.email && password === demoUser.password) {
-        currentUser = { email: demoUser.email, name: demoUser.name };
+    // Fetch stored users from localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Check against demo user or registered users
+    const user = users.find(user => user.email === email && user.password === password);
+    
+    if ((email === demoUser.email && password === demoUser.password) || user) {
+        currentUser = user || demoUser; // If found in storage, use that user; otherwise, use demo user
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
         updateAuthUI();
         closeAuthModal();
         showNotification('Successfully logged in!');
     } else {
         showNotification('Invalid email or password', 'error');
+    }
+}
+
+function handleRegister(name, email, password, confirmPassword) {
+    if (password !== confirmPassword) {
+        showNotification('Passwords do not match!', 'error');
+        return;
+    }
+
+    // Fetch existing users
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const existingUser = users.find(user => user.email === email);
+
+    if (existingUser || email === demoUser.email) {
+        showNotification('Email is already registered. Please login.', 'error');
+    } else {
+        users.push({ email, password, name });
+        localStorage.setItem('users', JSON.stringify(users));
+        showNotification('Registration successful! Please login.');
+        closeAuthModal();
+        showLoginModal();
     }
 }
 
@@ -82,7 +157,7 @@ function updateAuthUI() {
             loginBtn.onclick = handleLogout;
         } else {
             loginBtn.textContent = 'Login';
-            loginBtn.onclick = () => showAuthModal('login');
+            loginBtn.onclick = () => showLoginModal();
         }
     });
 }
