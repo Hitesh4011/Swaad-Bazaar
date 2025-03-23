@@ -23,7 +23,7 @@ function showLoginModal() {
     modal.innerHTML = `
         <div class="auth-content">
             <h2>Login</h2>
-            <form id="loginForm">
+            <form id="loginForm" method="POST">
                 <div class="form-group">
                     <label for="login-email">Email</label>
                     <input type="email" id="login-email" required>
@@ -57,7 +57,7 @@ function showRegisterModal() {
     modal.innerHTML = `
         <div class="auth-content">
             <h2>Register</h2>
-            <form id="registerForm">
+            <form id="registerForm" method="POST">
                 <div class="form-group">
                     <label for="register-name">Full Name</label>
                     <input type="text" id="register-name" required>
@@ -102,21 +102,24 @@ function closeAuthModal() {
 }
 
 function handleLogin(email, password) {
-    // Fetch stored users from localStorage
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Check against demo user or registered users
-    const user = users.find(user => user.email === email && user.password === password);
-    
-    if ((email === demoUser.email && password === demoUser.password) || user) {
-        currentUser = user || demoUser; // If found in storage, use that user; otherwise, use demo user
-        localStorage.setItem('currentUser', JSON.stringify(currentUser));
-        updateAuthUI();
-        closeAuthModal();
-        showNotification('Successfully logged in!');
-    } else {
-        showNotification('Invalid email or password', 'error');
-    }
+    fetch('http://localhost/swaad-bazaar/login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            currentUser = { email, name: data.name };
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            updateAuthUI();
+            closeAuthModal();
+            showNotification('Successfully logged in!');
+        } else {
+            showNotification(data.message, "error");
+        }
+    })
+    .catch(error => showNotification("Something went wrong!", "error"));
 }
 
 function handleRegister(name, email, password, confirmPassword) {
@@ -125,28 +128,30 @@ function handleRegister(name, email, password, confirmPassword) {
         return;
     }
 
-    // Fetch existing users
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const existingUser = users.find(user => user.email === email);
-
-    if (existingUser || email === demoUser.email) {
-        showNotification('Email is already registered. Please login.', 'error');
-    } else {
-        users.push({ email, password, name });
-        localStorage.setItem('users', JSON.stringify(users));
-        showNotification('Registration successful! Please login.');
-        closeAuthModal();
-        showLoginModal();
-    }
+    fetch('http://localhost/swaad-bazaar/registration.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        showNotification(data.message, data.status === "success" ? "success" : "error");
+        if (data.status === "success") {
+            closeAuthModal();
+            showLoginModal();
+        }
+    })
+    .catch(error => showNotification("Something went wrong!", "error"));
 }
 
 function handleLogout() {
-    currentUser = null;
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('cart'); // Clear cart on logout
-    updateAuthUI();
-    updateCartCount(); // Update cart display
-    showNotification('Successfully logged out!');
+    fetch('http://localhost/swaad-bazaar/logout.php', { method: 'GET' })
+    .then(() => {
+        currentUser = null;
+        localStorage.removeItem('currentUser');
+        updateAuthUI();
+        showNotification('Successfully logged out!');
+    });
 }
 
 function updateAuthUI() {
