@@ -101,11 +101,14 @@ function closeAuthModal() {
     }
 }
 
-function handleLogin(lemail, lpassword) {
+function handleLogin(email, password) {
     fetch('http://localhost/swaad-bazaar/login.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({
+            email: email,
+            password: password
+        })
     })
     .then(response => response.json())
     .then(data => {
@@ -143,10 +146,6 @@ function handleRegister(name, email, password, confirmPassword) {
         if (data.status === "success") {
             closeAuthModal();
             showLoginModal();
-        }
-        else
-        {
-            showNotification("connection is establish but not accepting the data", "error");
         }
     })
     .catch(error => {
