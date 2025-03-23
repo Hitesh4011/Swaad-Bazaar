@@ -44,9 +44,9 @@ function showLoginModal() {
 
     document.getElementById('loginForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-        handleLogin(email, password);
+        const lemail = document.getElementById('login-email').value;
+        const lpassword = document.getElementById('login-password').value;
+        handleLogin(lemail, lpassword);
     });
 }
 
@@ -86,11 +86,11 @@ function showRegisterModal() {
 
     document.getElementById('registerForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById('register-name').value;
-        const email = document.getElementById('register-email').value;
-        const password = document.getElementById('register-password').value;
-        const confirmPassword = document.getElementById('register-confirm-password').value;
-        handleRegister(name, email, password, confirmPassword);
+        const rname = document.getElementById('register-name').value;
+        const remail = document.getElementById('register-email').value;
+        const rpassword = document.getElementById('register-password').value;
+        const rconfirmPassword = document.getElementById('register-confirm-password').value;
+        handleRegister(rname, remail, rpassword, rconfirmPassword);
     });
 }
 
@@ -101,7 +101,7 @@ function closeAuthModal() {
     }
 }
 
-function handleLogin(email, password) {
+function handleLogin(lemail, lpassword) {
     fetch('http://localhost/swaad-bazaar/login.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -131,7 +131,11 @@ function handleRegister(name, email, password, confirmPassword) {
     fetch('http://localhost/swaad-bazaar/registration.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password })
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            password: password
+        })
     })
     .then(response => response.json())
     .then(data => {
@@ -140,8 +144,15 @@ function handleRegister(name, email, password, confirmPassword) {
             closeAuthModal();
             showLoginModal();
         }
+        else
+        {
+            showNotification("connection is establish but not accepting the data", "error");
+        }
     })
-    .catch(error => showNotification("Something went wrong!", "error"));
+    .catch(error => {
+        console.error('Error:', error);
+        showNotification("Something went wrong!", "error")
+    });
 }
 
 function handleLogout() {
