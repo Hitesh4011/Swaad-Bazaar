@@ -118,28 +118,6 @@ const featuredDishes = [
     }
 ];
 
-// Sample data for customer reviews
-const customerReviews = [
-    {
-        name: "John Doe",
-        rating: 5,
-        comment: "The best Indian food I've ever had! The Butter Chicken was amazing.",
-        date: "2024-02-15"
-    },
-    {
-        name: "Sarah Smith",
-        rating: 4,
-        comment: "Great flavors and excellent service. Will definitely order again!",
-        date: "2024-02-14"
-    },
-    {
-        name: "Mike Johnson",
-        rating: 5,
-        comment: "Authentic taste and quick delivery. Highly recommended!",
-        date: "2024-02-13"
-    }
-];
-
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -150,56 +128,10 @@ const navLinks = document.querySelector('.nav-links');
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    displayFeaturedDishes();
-    displayCustomerReviews();
+    displayDishesByCategory();
     updateCartCount();
     setupEventListeners();
-    setupFilters();
 });
-
-// Display featured dishes with category filter
-function displayFeaturedDishes(filteredDishes = featuredDishes) {
-    const dishesGrid = document.querySelector('.dishes-grid');
-    if (!dishesGrid) return;
-
-    // Create a container for single item
-    if (filteredDishes.length === 1) {
-        dishesGrid.innerHTML = `
-            <div class="single-dish-container">
-                <div class="dish-card" data-category="${filteredDishes[0].category.toLowerCase()}" onclick="showDishDetails(${filteredDishes[0].id})">
-                    <img src="${filteredDishes[0].image}" alt="${filteredDishes[0].name}">
-                    <div class="dish-card-content">
-                        <h3>${filteredDishes[0].name}</h3>
-                        <div class="rating">
-                            ${displayRating(filteredDishes[0].rating)}
-                        </div>
-                        <p>${filteredDishes[0].description}</p>
-                        <div class="dish-price">$${filteredDishes[0].price.toFixed(2)}</div>
-                        <button onclick="addToCart(${filteredDishes[0].id})" class="add-to-cart">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>`;
-    } else {
-        dishesGrid.innerHTML = filteredDishes.map(dish => `
-            <div class="dish-card" data-category="${dish.category.toLowerCase()}" onclick="showDishDetails(${dish.id})">
-                <img src="${dish.image}" alt="${dish.name}">
-                <div class="dish-card-content">
-                    <h3>${dish.name}</h3>
-                    <div class="rating">
-                        ${displayRating(dish.rating)}
-                    </div>
-                    <p>${dish.description}</p>
-                    <div class="dish-price">$${dish.price.toFixed(2)}</div>
-                    <button onclick="addToCart(${dish.id}); event.stopPropagation();" class="add-to-cart">
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-        `).join('');
-    }
-}
 
 // Show dish details modal
 function showDishDetails(dishId) {
@@ -345,28 +277,6 @@ function addToCart(dishId) {
     }
 }
 
-// Setup category filters
-function setupFilters() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    if (!filterBtns.length) return;
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const category = btn.dataset.category;
-            const filteredDishes = category === 'all' 
-                ? featuredDishes 
-                : featuredDishes.filter(dish => 
-                    dish.category.toLowerCase() === category.toLowerCase()
-                );
-
-            displayFeaturedDishes(filteredDishes);
-        });
-    });
-}
-
 // Helper function to display star rating
 function displayRating(rating) {
     const fullStars = Math.floor(rating);
@@ -442,6 +352,34 @@ function setupEventListeners() {
             contactForm.reset();
         });
     }
+}
+
+// Populate dishes by category
+function displayDishesByCategory() {
+    const categories = ['breakfast', 'appetizer', 'main-course', 'dessert', 'beverage'];
+
+    categories.forEach(category => {
+        const categoryContainer = document.getElementById(category);
+        if (!categoryContainer) return;
+
+        const filteredDishes = featuredDishes.filter(dish => 
+            dish.category.toLowerCase() === category.replace('-', ' ')
+        );
+
+        categoryContainer.innerHTML = filteredDishes.map(dish => `
+            <div class="dish-card" onclick="showDishDetails(${dish.id})">
+                <img src="${dish.image}" alt="${dish.name}">
+                <div class="dish-card-content">
+                    <h3>${dish.name}</h3>
+                    <p>${dish.description}</p>
+                    <div class="dish-price">$${dish.price.toFixed(2)}</div>
+                    <button onclick="addToCart(${dish.id}); event.stopPropagation();" class="add-to-cart">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    });
 }
 
 // Make functions globally accessible
