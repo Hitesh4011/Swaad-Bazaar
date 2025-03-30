@@ -694,7 +694,7 @@ body {
 }
 
 .category-scroll::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
+    background-color: #7070704b;
     border-radius: 10px;
 }
 
