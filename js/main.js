@@ -367,25 +367,6 @@ function setupFilters() {
     });
 }
 
-// Display customer reviews
-function displayCustomerReviews() {
-    const reviewsContainer = document.querySelector('.reviews-container');
-    if (!reviewsContainer) return;
-
-    reviewsContainer.innerHTML = customerReviews.map(review => `
-        <div class="review-card">
-            <div class="review-header">
-                <h3>${review.name}</h3>
-                <div class="rating">
-                    ${displayRating(review.rating)}
-                </div>
-            </div>
-            <p>${review.comment}</p>
-            <div class="review-date">${formatDate(review.date)}</div>
-        </div>
-    `).join('');
-}
-
 // Helper function to display star rating
 function displayRating(rating) {
     const fullStars = Math.floor(rating);
