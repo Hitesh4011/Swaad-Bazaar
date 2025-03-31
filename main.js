@@ -382,8 +382,91 @@ function displayDishesByCategory() {
     });
 }
 
+// Show the cart modal
+function showCartModal() {
+    const cartModal = document.getElementById('cartModal');
+    populateCartItems();
+    cartModal.classList.remove('hidden');
+}
+
+// Close the cart modal
+function closeCartModal() {
+    const cartModal = document.getElementById('cartModal');
+    cartModal.classList.add('hidden');
+}
+
+// Populate cart items in the modal
+function populateCartItems() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cartItems');
+    cartItemsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+    }
+
+    cart.forEach(item => {
+        cartItemsContainer.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-details">
+                    <h3>${item.name}</h3>
+                    <p>$${item.price.toFixed(2)}</p>
+                </div>
+                <div class="cart-item-actions">
+                    <button onclick="updateCartItem(${item.id}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="updateCartItem(${item.id}, 1)">+</button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// Update cart item quantity
+function updateCartItem(dishId, change) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const itemIndex = cart.findIndex(item => item.id === dishId);
+
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity += change;
+
+        // Remove item if quantity is 0
+        if (cart[itemIndex].quantity <= 0) {
+            cart.splice(itemIndex, 1);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        populateCartItems();
+        updateCartCount();
+    }
+}
+
+// Proceed to checkout
+function proceedToCheckout() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        showNotification('Your cart is empty!', 'error');
+        return;
+    }
+
+    // Redirect to checkout page or handle checkout logic
+    showNotification('Proceeding to checkout...');
+    closeCartModal();
+}
+
+// Attach the cart modal functionality to the "Add to Cart" button
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', showCartModal);
+});
+
 // Make functions globally accessible
 window.showDishDetails = showDishDetails;
 window.closeDishModal = closeDishModal;
 window.addToCart = addToCart;
 window.submitRating = submitRating;
+window.showCartModal = showCartModal;
+window.closeCartModal = closeCartModal;
+window.updateCartItem = updateCartItem;
+window.proceedToCheckout = proceedToCheckout;

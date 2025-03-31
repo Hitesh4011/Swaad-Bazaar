@@ -18,7 +18,7 @@
             <a href="#categories">Menu</a>
             <a href="#about">About Us</a>
             <a href="#contact">Contact</a>
-            <a href="cart.html" class="cart-icon">
+            <a class="cart-icon" onclick="showCartModal()">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="cart-count">0</span>
             </a>
@@ -36,7 +36,7 @@
         <div class="hero-content">
             <h1>Experience the Authentic Flavors of India</h1>
             <p>Discover our delicious menu and order online for quick delivery</p>
-            <a href="#dishes" class="cta-button">Order Now</a>
+            <a href="#categories" class="cta-button">Order Now</a>
         </div>
     </section>
 
@@ -163,6 +163,20 @@
             </form>
         </div>
     </section>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal hidden">
+        <div class="cart-modal-content">
+            <button class="close-btn" onclick="closeCartModal()">×</button>
+            <h2>Your Cart</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be dynamically populated -->
+            </div>
+            <div class="cart-footer">
+                <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
