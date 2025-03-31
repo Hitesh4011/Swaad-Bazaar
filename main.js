@@ -451,9 +451,14 @@ function proceedToCheckout() {
         return;
     }
 
-    // Redirect to checkout page or handle checkout logic
-    showNotification('Proceeding to checkout...');
-    closeCartModal();
+    const checkoutModal = document.getElementById('checkoutModal');
+    checkoutModal.classList.remove('hidden');
+}
+
+// Close the checkout modal
+function closeCheckoutModal() {
+    const checkoutModal = document.getElementById('checkoutModal');
+    checkoutModal.classList.add('hidden');
 }
 
 // Attach the cart modal functionality to the "Add to Cart" button
@@ -470,3 +475,4 @@ window.showCartModal = showCartModal;
 window.closeCartModal = closeCartModal;
 window.updateCartItem = updateCartItem;
 window.proceedToCheckout = proceedToCheckout;
+window.closeCheckoutModal = closeCheckoutModal;
