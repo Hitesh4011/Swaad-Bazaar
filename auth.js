@@ -115,6 +115,8 @@ function handleLogin(email, password) {
         if (data.status === "success") {
             currentUser = { email, name: data.name };
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            localStorage.removeItem('cart'); // Clear the cart on login
+            updateCartCount(); // Update the cart count
             updateAuthUI();
             closeAuthModal();
             showNotification('Successfully logged in!');
@@ -159,6 +161,8 @@ function handleLogout() {
     .then(() => {
         currentUser = null;
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('cart'); // Clear the cart when logging out
+        updateCartCount(); // Update the cart count to reflect the cleared cart
         updateAuthUI();
         showNotification('Successfully logged out!');
     });
