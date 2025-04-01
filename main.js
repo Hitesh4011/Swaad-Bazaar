@@ -329,18 +329,18 @@ function setupEventListeners() {
         });
     }
 
-    // Search functionality
-    const searchInput = document.querySelector('.search-container input');
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const filteredDishes = featuredDishes.filter(dish => 
-                dish.name.toLowerCase().includes(searchTerm) ||
-                dish.description.toLowerCase().includes(searchTerm)
-            );
-            displayFeaturedDishes(filteredDishes);
-        });
-    }
+    // // Search functionality
+    // const searchInput = document.querySelector('.search-container input');
+    // if (searchInput) {
+    //     searchInput.addEventListener('input', (e) => {
+    //         const searchTerm = e.target.value.toLowerCase();
+    //         const filteredDishes = featuredDishes.filter(dish => 
+    //             dish.name.toLowerCase().includes(searchTerm) ||
+    //             dish.description.toLowerCase().includes(searchTerm)
+    //         );
+    //         displayFeaturedDishes(filteredDishes);
+    //     });
+    // }
 
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
@@ -453,6 +453,7 @@ function proceedToCheckout() {
 
     const checkoutModal = document.getElementById('checkoutModal');
     checkoutModal.classList.remove('hidden');
+    closeCartModal();
 }
 
 // Close the checkout modal
@@ -460,6 +461,60 @@ function closeCheckoutModal() {
     const checkoutModal = document.getElementById('checkoutModal');
     checkoutModal.classList.add('hidden');
 }
+
+// // Go to a specific step in the checkout process
+// function goToStep(step) {
+//     const steps = document.querySelectorAll('.step');
+//     const forms = document.querySelectorAll('.checkout-form');
+
+//     steps.forEach(s => {
+//         s.classList.toggle('active', s.dataset.step === step);
+//     });
+
+//     forms.forEach(f => {
+//         f.classList.toggle('active', f.id === `${step}-form`);
+//     });
+// }
+
+// // Update checkout summary
+// function updateCheckoutSummary() {
+//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+//     const checkoutItems = document.getElementById('checkout-items');
+//     const subtotalElement = document.getElementById('checkout-subtotal');
+//     const taxElement = document.getElementById('checkout-tax');
+//     const totalElement = document.getElementById('checkout-total');
+
+//     checkoutItems.innerHTML = '';
+//     let subtotal = 0;
+
+//     cart.forEach(item => {
+//         subtotal += item.price * item.quantity;
+//         checkoutItems.innerHTML += `
+//             <div class="summary-row">
+//                 <span>${item.name} x${item.quantity}</span>
+//                 <span>$${(item.price * item.quantity).toFixed(2)}</span>
+//             </div>
+//         `;
+//     });
+
+//     const tax = subtotal * 0.08; // 8% tax
+//     const deliveryFee = 2.99;
+//     const total = subtotal + tax + deliveryFee;
+
+//     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+//     taxElement.textContent = `$${tax.toFixed(2)}`;
+//     totalElement.textContent = `$${total.toFixed(2)}`;
+// }
+
+// // Place order
+// function placeOrder() {
+//     // Clear cart and reset cart count
+//     localStorage.removeItem('cart');
+//     updateCartCount();
+
+//     // Show confirmation step
+//     goToStep('confirmation');
+// }
 
 // Attach the cart modal functionality to the "Add to Cart" button
 document.querySelectorAll('.add-to-cart').forEach(button => {
@@ -476,3 +531,7 @@ window.closeCartModal = closeCartModal;
 window.updateCartItem = updateCartItem;
 window.proceedToCheckout = proceedToCheckout;
 window.closeCheckoutModal = closeCheckoutModal;
+window.openCheckoutModal = openCheckoutModal;
+window.goToStep = goToStep;
+window.updateCheckoutSummary = updateCheckoutSummary;
+window.placeOrder = placeOrder;

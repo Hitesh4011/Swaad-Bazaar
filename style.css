@@ -1001,10 +1001,7 @@ html {
     background-color: var(--secondary-color);
 }
 
-.hidden{
-    display: none;
-}
-
+/* Checkout Modal */
 .checkout-modal {
     position: fixed;
     top: 0;
@@ -1017,6 +1014,11 @@ html {
     justify-content: center;
     z-index: 1100;
     overflow-y: auto;
+    padding: 2rem; /* Add padding to prevent touching the edges */
+}
+
+.checkout-modal.hidden {
+    display: none;
 }
 
 .checkout-modal-content {
@@ -1026,7 +1028,80 @@ html {
     box-shadow: var(--card-shadow);
     width: 90%;
     max-width: 600px;
-    max-height: 90vh;
+    max-height: 90vh; /* Prevent the modal from exceeding the viewport height */
     overflow-y: auto;
     position: relative;
+}
+
+.checkout-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.checkout-modal-header h2 {
+    color: var(--primary-color);
+}
+
+.checkout-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    color: #666;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+}
+
+.step.active .step-number {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.step-text {
+    color: #666;
+}
+
+.step.active .step-text {
+    color: var(--primary-color);
+}
+
+.checkout-form {
+    display: none;
+}
+
+.checkout-form.active {
+    display: block;
+}
+
+.order-summary {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    margin-top: 1rem;
 }
