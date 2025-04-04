@@ -462,21 +462,33 @@ function closeCheckoutModal() {
     checkoutModal.classList.add('hidden');
 }
 
-// // Go to a specific step in the checkout process
-// function goToStep(step) {
-//     const steps = document.querySelectorAll('.step');
-//     const forms = document.querySelectorAll('.checkout-form');
 
-//     steps.forEach(s => {
-//         s.classList.toggle('active', s.dataset.step === step);
-//     });
 
-//     forms.forEach(f => {
-//         f.classList.toggle('active', f.id === `${step}-form`);
-//     });
-// }
+// Go to a specific step in the checkout process
+function goToStep(step) {
+    const steps = document.querySelectorAll('.step');
+    const forms = document.querySelectorAll('.checkout-form');
 
-// // Update checkout summary
+    steps.forEach(s => {
+        s.classList.toggle('active', s.dataset.step === step);
+    });
+
+    forms.forEach(f => {
+        f.classList.toggle('active', f.id === `${step}-form`);
+    });
+}
+
+// Go to the previous step in the checkout process
+function goToPreviousStep() {
+    const activeStep = document.querySelector('.step.active');
+    if (!activeStep) return;
+
+    const previousStep = activeStep.previousElementSibling;
+    if (previousStep && previousStep.classList.contains('step')) {
+        goToStep(previousStep.dataset.step);
+    }
+}
+// Update checkout summary
 // function updateCheckoutSummary() {
 //     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 //     const checkoutItems = document.getElementById('checkout-items');
@@ -506,8 +518,32 @@ function closeCheckoutModal() {
 //     totalElement.textContent = `$${total.toFixed(2)}`;
 // }
 
-// // Place order
+// Place order
 // function placeOrder() {
+//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+//     if (cart.length === 0) {
+//         showNotification('Your cart is empty!', 'error');
+//         return;
+//     }
+
+//     // Generate a random order ID
+//     const orderId = `ORD-${Math.floor(100000 + Math.random() * 900000)}`;
+
+//     // Calculate total payment amount
+//     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+//     const tax = subtotal * 0.08; // 8% tax
+//     const deliveryFee = 2.99;
+//     const total = subtotal + tax + deliveryFee;
+
+//     // Display confirmation details
+//     const confirmationDetails = document.getElementById('confirmation-details');
+//     confirmationDetails.innerHTML = `
+//         <h3>Order Confirmation</h3>
+//         <p>Order ID: <strong>${orderId}</strong></p>
+//         <p>Total Payment: <strong>$${total.toFixed(2)}</strong></p>
+//         <p>Thank you for your order!</p>
+//     `;
+
 //     // Clear cart and reset cart count
 //     localStorage.removeItem('cart');
 //     updateCartCount();
@@ -531,7 +567,7 @@ window.closeCartModal = closeCartModal;
 window.updateCartItem = updateCartItem;
 window.proceedToCheckout = proceedToCheckout;
 window.closeCheckoutModal = closeCheckoutModal;
-window.openCheckoutModal = openCheckoutModal;
+// window.openCheckoutModal = openCheckoutModal;
 window.goToStep = goToStep;
-window.updateCheckoutSummary = updateCheckoutSummary;
-window.placeOrder = placeOrder;
+// window.updateCheckoutSummary = updateCheckoutSummary;
+// window.placeOrder = placeOrder;

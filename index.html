@@ -277,13 +277,13 @@
                                 <span id="checkout-total">$0.00</span>
                             </div>
                         </div>
-                        <button type="button" class="btn prev-step" onclick="">Back</button>
-                        <button type="button" class="btn next-step" onclick="">Place Order</button>
+                        <button type="button" class="btn prev-step" onclick="goToPreviousStep('delivery')">Back</button>
+                        <button type="button" class="btn next-step" onclick="goToStep('confirmation')">Place Order</button>
                     </form>
 
                     <!-- Confirmation -->
-                    <div id="confirmation-form" class="checkout-form">
-                        <div class="confirmation-message">
+                    <form id="confirmation-form" class="checkout-form">
+                        <div class="confirmation-details">
                             <i class="fas fa-check-circle"></i>
                             <h3>Order Confirmed!</h3>
                             <p>Your order has been placed successfully.</p>
@@ -291,7 +291,7 @@
                             <p>Estimated delivery time: <span id="delivery-time">30-45 minutes</span></p>
                             <button class="btn" onclick="closeCheckoutModal()">Continue Shopping</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
