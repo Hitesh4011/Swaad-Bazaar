@@ -195,10 +195,6 @@
                         <span class="step-number">2</span>
                         <span class="step-text">Payment</span>
                     </div>
-                    <div class="step" data-step="confirmation">
-                        <span class="step-number">3</span>
-                        <span class="step-text">Confirmation</span>
-                    </div>
                 </div>
 
                 <div class="checkout-forms">
@@ -231,7 +227,7 @@
                                 <input type="text" id="zip" required>
                             </div>
                         </div>
-                        <button type="button" class="btn next-step" onclick="goToStep('payment')">Continue to Payment</button>
+                        <button type="submit" class="btn next-step" onclick="goToStep('delivery','payment')">Continue to Payment</button>
                     </form>
 
                     <!-- Payment Form -->
@@ -278,19 +274,7 @@
                             </div>
                         </div>
                         <button type="button" class="btn prev-step" onclick="goToPreviousStep('delivery')">Back</button>
-                        <button type="button" class="btn next-step" onclick="goToStep('confirmation')">Place Order</button>
-                    </form>
-
-                    <!-- Confirmation -->
-                    <form id="confirmation-form" class="checkout-form">
-                        <div class="confirmation-details">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Order Confirmed!</h3>
-                            <p>Your order has been placed successfully.</p>
-                            <p>Order #: <span id="order-number">12345</span></p>
-                            <p>Estimated delivery time: <span id="delivery-time">30-45 minutes</span></p>
-                            <button class="btn" onclick="closeCheckoutModal()">Continue Shopping</button>
-                        </div>
+                        <button type="submit" class="btn next-step" onclick="goToStep('payment', false)">Place Order</button>
                     </form>
                 </div>
             </div>
