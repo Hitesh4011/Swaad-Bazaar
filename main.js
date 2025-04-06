@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayDishesByCategory();
     updateCartCount();
     setupEventListeners();
+    updateCartAndSummary();
 });
 
 // Show dish details modal
@@ -42,7 +43,7 @@ function showDishDetails(dishId) {
                     <div class="rating">
                         ${displayRating(dish.rating)}
                     </div>
-                    <p class="price">$${dish.price.toFixed(2)}</p>
+                    <p class="price">₹${dish.price.toFixed(2)}</p>
                     <p class="description">${dish.description}</p>
                 </div>
             </div>
@@ -251,7 +252,7 @@ function displayDishesByCategory() {
                 <div class="dish-card-content">
                     <h3>${dish.name}</h3>
                     <p>${dish.description}</p>
-                    <div class="dish-price">$${dish.price.toFixed(2)}</div>
+                    <div class="dish-price">₹${dish.price.toFixed(2)}</div>
                     <button onclick="addToCart(${dish.id}); event.stopPropagation();" class="add-to-cart">
                         Add to Cart
                     </button>
@@ -291,7 +292,7 @@ function populateCartItems() {
                 <img src="${item.image}" alt="${item.name}">
                 <div class="cart-item-details">
                     <h3>${item.name}</h3>
-                    <p>$${item.price.toFixed(2)}</p>
+                    <p>₹${item.price.toFixed(2)}</p>
                 </div>
                 <div class="cart-item-actions">
                     <button onclick="updateCartItem(${item.id}, -1)">-</button>
@@ -333,6 +334,9 @@ function proceedToCheckout() {
     const checkoutModal = document.getElementById('checkoutModal');
     checkoutModal.classList.remove('hidden');
     closeCartModal();
+
+    // Recalculate the checkout summary when opening the modal
+    calculateCheckoutSummary();
 }
 
 // Close the checkout modal
@@ -380,15 +384,22 @@ function goToStep(prevstep, step) {
 
             return;
         }
+        steps.forEach(s => {
+        s.classList.toggle('active', s.dataset.step === step);
+        });
+
+        forms.forEach(f => {
+            f.classList.toggle('active', f.id === `${step}-form`);
+        });
     }
 
     steps.forEach(s => {
-        s.classList.toggle('active', s.dataset.step === step);
-    });
+      s.classList.toggle('active', s.dataset.step === step);
+      });
 
-    forms.forEach(f => {
-        f.classList.toggle('active', f.id === `${step}-form`);
-    });
+      forms.forEach(f => {
+          f.classList.toggle('active', f.id === `${step}-form`);
+      });
 }
 
 // Go to the previous step in the checkout process
@@ -418,3 +429,35 @@ window.updateCartItem = updateCartItem;
 window.proceedToCheckout = proceedToCheckout;
 window.closeCheckoutModal = closeCheckoutModal;
 window.goToStep = goToStep;
+
+function calculateCheckoutSummary() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const deliveryFee = 20; // Fixed delivery fee
+    let subtotal = 0;
+
+    // Calculate subtotal from cart items
+    cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+    });
+
+    const tax = subtotal * 0.05;
+
+    const total = subtotal + deliveryFee + tax;
+
+    const subtotalElement = document.getElementById('checkout-subtotal');
+    const deliveryElement = document.getElementById('checkout-delivery');
+    const taxElement = document.getElementById('checkout-tax');
+    const totalElement = document.getElementById('checkout-total');
+
+    subtotalElement.textContent = `₹${subtotal.toFixed(2)}`;
+    deliveryElement.textContent = `₹${deliveryFee.toFixed(2)}`;
+    taxElement.textContent = `₹${tax.toFixed(2)}`;
+    totalElement.textContent = `₹${total.toFixed(2)}`;
+}
+
+// Call this function whenever the cart is updated
+function updateCartAndSummary() {
+    updateCartCount(); // Update cart count
+    populateCartItems(); // Populate cart items in the modal
+    calculateCheckoutSummary(); // Update checkout summary
+}

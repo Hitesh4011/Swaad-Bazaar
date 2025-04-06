@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Paneer Butter Masala",
-        "price": 13.99,
+        "price": 139,
         "rating": 4.7,
         "image": "img/paneer butter masala.jpeg",
         "description": "Cottage cheese cubes in a creamy tomato-based gravy",
@@ -19,7 +19,7 @@
       {
         "id": 2,
         "name": "Chana Masala",
-        "price": 10.49,
+        "price": 100,
         "rating": 4.6,
         "image": "img/chana masala.jpeg",
         "description": "Spiced chickpeas in a tangy tomato gravy",
@@ -36,7 +36,7 @@
       {
         "id": 3,
         "name": "Rajma Masala",
-        "price": 10.99,
+        "price": 100,
         "rating": 4.5,
         "image": "img/rajma masala.jpeg",
         "description": "Red kidney beans in a spiced onion-tomato curry",
@@ -53,7 +53,7 @@
       {
         "id": 4,
         "name": "Baingan Bharta",
-        "price": 9.99,
+        "price": 90,
         "rating": 4.4,
         "image": "img/baingan bharta.jpeg",
         "description": "Smoky mashed eggplant cooked with onions and tomatoes",
@@ -70,7 +70,7 @@
       {
         "id": 5,
         "name": "Palak Paneer",
-        "price": 12.49,
+        "price": 120,
         "rating": 4.8,
         "image": "img/palak paneer.jpeg",
         "description": "Paneer cubes in a vibrant spinach gravy",
@@ -87,7 +87,7 @@
       {
         "id": 6,
         "name": "Vegetable Biryani",
-        "price": 14.99,
+        "price": 140,
         "rating": 4.7,
         "image": "img/vegetable biryani.jpeg",
         "description": "Aromatic basmati rice cooked with vegetables and spices",
@@ -104,7 +104,7 @@
       {
         "id": 7,
         "name": "Aloo Gobi",
-        "price": 9.49,
+        "price": 90,
         "rating": 4.3,
         "image": "img/aloo gobi.jpeg",
         "description": "Dry curry made with potatoes and cauliflower",
@@ -121,7 +121,7 @@
       {
         "id": 8,
         "name": "Kadai Paneer",
-        "price": 13.49,
+        "price": 130,
         "rating": 4.6,
         "image": "img/kadai paneer.jpeg",
         "description": "Paneer tossed with bell peppers and onions in a tangy gravy",
@@ -138,7 +138,7 @@
       {
         "id": 9,
         "name": "Bhindi Masala",
-        "price": 9.99,
+        "price": 90,
         "rating": 4.4,
         "image": "img/bhindi masala.jpeg",
         "description": "Spiced okra sautéed with onions and tomatoes",
@@ -155,7 +155,7 @@
       {
         "id": 10,
         "name": "Dum Aloo",
-        "price": 11.49,
+        "price": 110,
         "rating": 4.5,
         "image": "img/dum aloo.jpeg",
         "description": "Baby potatoes simmered in a spiced yogurt gravy",
@@ -172,7 +172,7 @@
       {
         "id": 11,
         "name": "Masala Dosa",
-        "price": 8.99,
+        "price": 80,
         "rating": 4.7,
         "image": "img/masala dosa.jpeg",
         "description": "Crispy dosa filled with spicy potato masala",
@@ -189,7 +189,7 @@
       {
         "id": 12,
         "name": "Aloo Paratha",
-        "price": 6.99,
+        "price": 60,
         "rating": 4.6,
         "image": "img/aloo paratha.jpeg",
         "description": "Stuffed flatbread with spiced mashed potatoes",
@@ -206,7 +206,7 @@
       {
         "id": 13,
         "name": "Poha",
-        "price": 4.99,
+        "price": 40,
         "rating": 4.5,
         "image": "img/poha.jpeg",
         "description": "Flattened rice stir-fried with turmeric, mustard seeds, and peanuts",
@@ -223,7 +223,7 @@
       {
         "id": 14,
         "name": "Upma",
-        "price": 5.49,
+        "price": 50,
         "rating": 4.4,
         "image": "img/upma.jpeg",
         "description": "Savory semolina porridge with vegetables and spices",
@@ -240,7 +240,7 @@
       {
         "id": 15,
         "name": "Idli",
-        "price": 4.49,
+        "price": 40,
         "rating": 4.8,
         "image": "img/idli.jpeg",
         "description": "Soft steamed rice cakes served with chutney and sambar",
@@ -257,7 +257,7 @@
       {
         "id": 16,
         "name": "Besan Chilla",
-        "price": 5.99,
+        "price": 50,
         "rating": 4.6,
         "image": "img/besan chilla.jpeg",
         "description": "Savory gram flour pancakes with onions and spices",
@@ -274,7 +274,7 @@
       {
         "id": 17,
         "name": "Methi Thepla",
-        "price": 5.49,
+        "price": 50,
         "rating": 4.5,
         "image": "img/methi thepla.jpeg",
         "description": "Gujarati flatbread made with fenugreek leaves and spices",
@@ -291,7 +291,7 @@
       {
         "id": 18,
         "name": "Sabudana Khichdi",
-        "price": 6.49,
+        "price": 60,
         "rating": 4.6,
         "image": "img/sabudana khichdi.jpeg",
         "description": "Sago cooked with peanuts and potatoes, perfect for fasting",
@@ -308,7 +308,7 @@
       {
         "id": 19,
         "name": "Moong Dal Cheela",
-        "price": 6.99,
+        "price": 60,
         "rating": 4.7,
         "image": "img/moong dal cheela.jpeg",
         "description": "Protein-rich savory pancakes made from moong dal batter",
@@ -325,7 +325,7 @@
       {
         "id": 20,
         "name": "Pesarattu",
-        "price": 6.49,
+        "price": 60,
         "rating": 4.5,
         "image": "img/pesarattu.jpeg",
         "description": "Andhra special green gram dosa served with ginger chutney",
@@ -342,7 +342,7 @@
       {
         "id": 21,
         "name": "Paneer Tikka",
-        "price": 9.99,
+        "price": 90,
         "rating": 4.8,
         "image": "img/paneer tikka.jpeg",
         "description": "Grilled cubes of marinated paneer with vegetables",
@@ -359,7 +359,7 @@
       {
         "id": 22,
         "name": "Hara Bhara Kabab",
-        "price": 7.49,
+        "price": 70,
         "rating": 4.6,
         "image": "img/hara bhara kabab.jpeg",
         "description": "Green vegetable patties made with spinach and peas",
@@ -376,7 +376,7 @@
       {
         "id": 23,
         "name": "Vegetable Samosa",
-        "price": 5.99,
+        "price": 50,
         "rating": 4.7,
         "image": "img/vegetable samosa.jpeg",
         "description": "Crispy pastry filled with spicy potato and peas",
@@ -393,7 +393,7 @@
       {
         "id": 24,
         "name": "Dhokla",
-        "price": 6.49,
+        "price": 60,
         "rating": 4.5,
         "image": "img/dhokla.jpeg",
         "description": "Soft and fluffy steamed snack from Gujarat",
@@ -410,7 +410,7 @@
       {
         "id": 25,
         "name": "Aloo Tikki",
-        "price": 5.49,
+        "price": 50,
         "rating": 4.6,
         "image": "img/aloo tikki.jpeg",
         "description": "Spicy mashed potato patties, shallow fried to crisp",
@@ -427,7 +427,7 @@
       {
         "id": 26,
         "name": "Corn Chaat",
-        "price": 4.99,
+        "price": 40,
         "rating": 4.5,
         "image": "img/corn chaat.jpeg",
         "description": "Sweet corn mixed with tangy chaat masala and herbs",
@@ -444,7 +444,7 @@
       {
         "id": 27,
         "name": "Veg Spring Rolls",
-        "price": 7.99,
+        "price": 70,
         "rating": 4.4,
         "image": "img/veg spring rolls.jpeg",
         "description": "Crispy rolls filled with spiced vegetables",
@@ -461,7 +461,7 @@
       {
         "id": 28,
         "name": "Stuffed Mushrooms",
-        "price": 8.49,
+        "price": 80,
         "rating": 4.5,
         "image": "img/stuffed mushrooms.jpeg",
         "description": "Mushrooms filled with spiced paneer and baked",
@@ -478,7 +478,7 @@
       {
         "id": 29,
         "name": "Masala Papad",
-        "price": 3.99,
+        "price": 30,
         "rating": 4.3,
         "image": "img/masala papad.jpeg",
         "description": "Crispy papad topped with onions, tomatoes, and masala",
@@ -495,7 +495,7 @@
       {
         "id": 30,
         "name": "Mini Dahi Puri",
-        "price": 6.99,
+        "price": 60,
         "rating": 4.7,
         "image": "img/mini dahi puri.jpeg",
         "description": "Crispy puris filled with curd, chutneys and masalas",
@@ -512,7 +512,7 @@
       {
         "id": 31,
         "name": "Gulab Jamun",
-        "price": 6.49,
+        "price": 60,
         "rating": 4.9,
         "image": "img/gulab jamun.jpeg",
         "description": "Soft khoya balls soaked in cardamom-infused sugar syrup",
@@ -529,7 +529,7 @@
       {
         "id": 32,
         "name": "Rasgulla",
-        "price": 5.99,
+        "price": 50,
         "rating": 4.8,
         "image": "img/rasgulla.jpeg",
         "description": "Spongy balls made from chhena soaked in light sugar syrup",
@@ -546,7 +546,7 @@
       {
         "id": 33,
         "name": "Kaju Katli",
-        "price": 8.99,
+        "price": 80,
         "rating": 4.7,
         "image": "img/kaju katli.jpeg",
         "description": "Thin diamond-shaped cashew fudge, rich and creamy",
@@ -563,7 +563,7 @@
       {
         "id": 34,
         "name": "Moong Dal Halwa",
-        "price": 7.49,
+        "price": 70,
         "rating": 4.6,
         "image": "img/moong dal halwa.jpeg",
         "description": "Rich halwa made with moong dal, ghee, and dry fruits",
@@ -580,7 +580,7 @@
       {
         "id": 35,
         "name": "Gajar ka Halwa",
-        "price": 6.99,
+        "price": 60,
         "rating": 4.9,
         "image": "img/carrot halwa.jpeg",
         "description": "Slow-cooked grated carrots with milk and ghee",
@@ -597,7 +597,7 @@
       {
         "id": 36,
         "name": "Rice Kheer",
-        "price": 5.49,
+        "price": 50,
         "rating": 4.7,
         "image": "img/rice kheer.jpeg",
         "description": "Creamy rice pudding flavored with cardamom and saffron",
@@ -614,7 +614,7 @@
       {
         "id": 37,
         "name": "Sandesh",
-        "price": 6.49,
+        "price": 60,
         "rating": 4.6,
         "image": "img/sandesh.jpeg",
         "description": "Delicate Bengali sweet made from fresh paneer",
@@ -631,7 +631,7 @@
       {
         "id": 38,
         "name": "Jalebi",
-        "price": 5.99,
+        "price": 50,
         "rating": 4.8,
         "image": "img/jalebi.jpeg",
         "description": "Deep-fried spirals soaked in saffron sugar syrup",
@@ -648,7 +648,7 @@
       {
         "id": 39,
         "name": "Rasmalai",
-        "price": 7.99,
+        "price": 70,
         "rating": 4.9,
         "image": "img/rasmalai.jpeg",
         "description": "Soft paneer patties in creamy saffron milk",
@@ -665,7 +665,7 @@
       {
         "id": 40,
         "name": "Besan Ladoo",
-        "price": 4.99,
+        "price": 40,
         "rating": 4.5,
         "image": "img/besan ladoo.jpeg",
         "description": "Roasted gram flour sweets shaped into round balls",
@@ -682,7 +682,7 @@
       {
         "id": 41,
         "name": "Masala Chai",
-        "price": 2.99,
+        "price": 20,
         "rating": 4.9,
         "image": "img/masala chai.jpeg",
         "description": "Strong Indian tea brewed with spices and milk",
@@ -699,7 +699,7 @@
       {
         "id": 42,
         "name": "Sweet Lassi",
-        "price": 3.49,
+        "price": 30,
         "rating": 4.8,
         "image": "img/sweet lassi.jpeg",
         "description": "Thick yogurt-based sweet drink, chilled and refreshing",
@@ -716,7 +716,7 @@
       {
         "id": 43,
         "name": "Mango Lassi",
-        "price": 3.99,
+        "price": 30,
         "rating": 4.9,
         "image": "img/mango lassi.jpeg",
         "description": "A creamy blend of mango pulp, yogurt, and sugar",
@@ -733,7 +733,7 @@
       {
         "id": 44,
         "name": "Filter Coffee",
-        "price": 2.49,
+        "price": 20,
         "rating": 4.7,
         "image": "img/filter coffee.jpeg",
         "description": "South Indian strong decoction coffee with milk",
@@ -750,7 +750,7 @@
       {
         "id": 45,
         "name": "Aam Panna",
-        "price": 2.99,
+        "price": 20,
         "rating": 4.6,
         "image": "img/aam panna.jpeg",
         "description": "Refreshing raw mango drink with mint and spices",
@@ -767,7 +767,7 @@
       {
         "id": 46,
         "name": "Nimbu Pani",
-        "price": 1.99,
+        "price": 10,
         "rating": 4.8,
         "image": "img/nimbu pani.jpeg",
         "description": "Lemon juice mixed with water, sugar, and salt",
@@ -784,7 +784,7 @@
       {
         "id": 47,
         "name": "Thandai",
-        "price": 4.49,
+        "price": 40,
         "rating": 4.7,
         "image": "img/thandai.jpeg",
         "description": "Milk-based festive drink flavored with nuts and spices",
@@ -801,7 +801,7 @@
       {
         "id": 48,
         "name": "Badam Milk",
-        "price": 3.99,
+        "price": 30,
         "rating": 4.8,
         "image": "img/badam milk.jpeg",
         "description": "Sweet almond-flavored milk served hot or cold",
@@ -818,7 +818,7 @@
       {
         "id": 49,
         "name": "Jaljeera",
-        "price": 2.49,
+        "price": 20,
         "rating": 4.5,
         "image": "img/jaljeera.jpeg",
         "description": "Tangy spiced drink with cumin, mint, and lemon",
@@ -835,7 +835,7 @@
       {
         "id": 50,
         "name": "Coconut Water",
-        "price": 2.99,
+        "price": 20,
         "rating": 4.9,
         "image": "img/coconut water.jpeg",
         "description": "Natural, sweet, and refreshing drink from green coconuts",
