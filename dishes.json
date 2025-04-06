@@ -1,0 +1,852 @@
+[
+    {
+        "id": 1,
+        "name": "Paneer Butter Masala",
+        "price": 13.99,
+        "rating": 4.7,
+        "image": "img/paneer butter masala.jpeg",
+        "description": "Cottage cheese cubes in a creamy tomato-based gravy",
+        "category": "Main Course",
+        "recipe": "1. Sauté onions and tomatoes\n2. Blend into a smooth paste\n3. Add spices and paneer\n4. Finish with cream and butter",
+        "ingredients": ["Paneer", "Tomatoes", "Cream", "Butter", "Spices"],
+        "nutritionalInfo": {
+          "calories": 420,
+          "protein": "22g",
+          "carbs": "18g",
+          "fat": "30g"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Chana Masala",
+        "price": 10.49,
+        "rating": 4.6,
+        "image": "img/chana masala.jpeg",
+        "description": "Spiced chickpeas in a tangy tomato gravy",
+        "category": "Main Course",
+        "recipe": "1. Soak and boil chickpeas\n2. Sauté onions, tomatoes, and spices\n3. Simmer chickpeas in the gravy",
+        "ingredients": ["Chickpeas", "Onions", "Tomatoes", "Spices", "Coriander"],
+        "nutritionalInfo": {
+          "calories": 350,
+          "protein": "15g",
+          "carbs": "40g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Rajma Masala",
+        "price": 10.99,
+        "rating": 4.5,
+        "image": "img/rajma masala.jpeg",
+        "description": "Red kidney beans in a spiced onion-tomato curry",
+        "category": "Main Course",
+        "recipe": "1. Soak and boil rajma\n2. Sauté onion-tomato masala\n3. Cook rajma with the masala",
+        "ingredients": ["Kidney Beans", "Onions", "Tomatoes", "Ginger", "Spices"],
+        "nutritionalInfo": {
+          "calories": 390,
+          "protein": "17g",
+          "carbs": "45g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Baingan Bharta",
+        "price": 9.99,
+        "rating": 4.4,
+        "image": "img/baingan bharta.jpeg",
+        "description": "Smoky mashed eggplant cooked with onions and tomatoes",
+        "category": "Main Course",
+        "recipe": "1. Roast eggplant\n2. Mash and cook with sautéed onions, tomatoes, and spices",
+        "ingredients": ["Eggplant", "Onions", "Tomatoes", "Garlic", "Spices"],
+        "nutritionalInfo": {
+          "calories": 220,
+          "protein": "4g",
+          "carbs": "18g",
+          "fat": "15g"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Palak Paneer",
+        "price": 12.49,
+        "rating": 4.8,
+        "image": "img/palak paneer.jpeg",
+        "description": "Paneer cubes in a vibrant spinach gravy",
+        "category": "Main Course",
+        "recipe": "1. Blanch and purée spinach\n2. Cook with spices\n3. Add paneer and simmer",
+        "ingredients": ["Spinach", "Paneer", "Garlic", "Ginger", "Spices"],
+        "nutritionalInfo": {
+          "calories": 330,
+          "protein": "18g",
+          "carbs": "10g",
+          "fat": "24g"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Vegetable Biryani",
+        "price": 14.99,
+        "rating": 4.7,
+        "image": "img/vegetable biryani.jpeg",
+        "description": "Aromatic basmati rice cooked with vegetables and spices",
+        "category": "Main Course",
+        "recipe": "1. Cook rice and vegetables separately\n2. Layer with fried onions and spices\n3. Steam cook together",
+        "ingredients": ["Basmati Rice", "Carrots", "Beans", "Spices", "Yogurt"],
+        "nutritionalInfo": {
+          "calories": 430,
+          "protein": "10g",
+          "carbs": "60g",
+          "fat": "15g"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Aloo Gobi",
+        "price": 9.49,
+        "rating": 4.3,
+        "image": "img/aloo gobi.jpeg",
+        "description": "Dry curry made with potatoes and cauliflower",
+        "category": "Main Course",
+        "recipe": "1. Sauté potatoes and cauliflower\n2. Add spices and cook till tender",
+        "ingredients": ["Potatoes", "Cauliflower", "Turmeric", "Ginger", "Spices"],
+        "nutritionalInfo": {
+          "calories": 260,
+          "protein": "5g",
+          "carbs": "30g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 8,
+        "name": "Kadai Paneer",
+        "price": 13.49,
+        "rating": 4.6,
+        "image": "img/kadai paneer.jpeg",
+        "description": "Paneer tossed with bell peppers and onions in a tangy gravy",
+        "category": "Main Course",
+        "recipe": "1. Sauté onions and bell peppers\n2. Add spices and paneer\n3. Simmer in tomato gravy",
+        "ingredients": ["Paneer", "Capsicum", "Onions", "Tomatoes", "Spices"],
+        "nutritionalInfo": {
+          "calories": 380,
+          "protein": "20g",
+          "carbs": "16g",
+          "fat": "28g"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Bhindi Masala",
+        "price": 9.99,
+        "rating": 4.4,
+        "image": "img/bhindi masala.jpeg",
+        "description": "Spiced okra sautéed with onions and tomatoes",
+        "category": "Main Course",
+        "recipe": "1. Sauté bhindi till crisp\n2. Add onions, tomatoes, and spices\n3. Cook till blended",
+        "ingredients": ["Okra", "Onions", "Tomatoes", "Cumin", "Spices"],
+        "nutritionalInfo": {
+          "calories": 210,
+          "protein": "4g",
+          "carbs": "15g",
+          "fat": "14g"
+        }
+      },
+      {
+        "id": 10,
+        "name": "Dum Aloo",
+        "price": 11.49,
+        "rating": 4.5,
+        "image": "img/dum aloo.jpeg",
+        "description": "Baby potatoes simmered in a spiced yogurt gravy",
+        "category": "Main Course",
+        "recipe": "1. Fry baby potatoes\n2. Cook with yogurt, spices, and tomato gravy\n3. Simmer until thick",
+        "ingredients": ["Baby Potatoes", "Yogurt", "Tomatoes", "Spices", "Ginger"],
+        "nutritionalInfo": {
+          "calories": 340,
+          "protein": "6g",
+          "carbs": "38g",
+          "fat": "18g"
+        }
+      },
+      {
+        "id": 11,
+        "name": "Masala Dosa",
+        "price": 8.99,
+        "rating": 4.7,
+        "image": "img/masala dosa.jpeg",
+        "description": "Crispy dosa filled with spicy potato masala",
+        "category": "Breakfast",
+        "recipe": "1. Prepare dosa batter\n2. Make potato masala\n3. Spread batter on tawa\n4. Add masala and fold",
+        "ingredients": ["Rice", "Urad Dal", "Potatoes", "Spices", "Oil"],
+        "nutritionalInfo": {
+          "calories": 350,
+          "protein": "8g",
+          "carbs": "55g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Aloo Paratha",
+        "price": 6.99,
+        "rating": 4.6,
+        "image": "img/aloo paratha.jpeg",
+        "description": "Stuffed flatbread with spiced mashed potatoes",
+        "category": "Breakfast",
+        "recipe": "1. Prepare dough\n2. Stuff with mashed aloo mix\n3. Roll and cook on tawa with ghee",
+        "ingredients": ["Wheat Flour", "Potatoes", "Spices", "Ghee"],
+        "nutritionalInfo": {
+          "calories": 400,
+          "protein": "10g",
+          "carbs": "60g",
+          "fat": "14g"
+        }
+      },
+      {
+        "id": 13,
+        "name": "Poha",
+        "price": 4.99,
+        "rating": 4.5,
+        "image": "img/poha.jpeg",
+        "description": "Flattened rice stir-fried with turmeric, mustard seeds, and peanuts",
+        "category": "Breakfast",
+        "recipe": "1. Rinse poha\n2. Temper spices and onions\n3. Add poha and mix well",
+        "ingredients": ["Flattened Rice", "Onions", "Peanuts", "Spices", "Oil"],
+        "nutritionalInfo": {
+          "calories": 300,
+          "protein": "6g",
+          "carbs": "45g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 14,
+        "name": "Upma",
+        "price": 5.49,
+        "rating": 4.4,
+        "image": "img/upma.jpeg",
+        "description": "Savory semolina porridge with vegetables and spices",
+        "category": "Breakfast",
+        "recipe": "1. Roast rava\n2. Sauté vegetables and spices\n3. Add water and cook until thick",
+        "ingredients": ["Semolina (Rava)", "Vegetables", "Spices", "Oil"],
+        "nutritionalInfo": {
+          "calories": 320,
+          "protein": "7g",
+          "carbs": "50g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 15,
+        "name": "Idli",
+        "price": 4.49,
+        "rating": 4.8,
+        "image": "img/idli.jpeg",
+        "description": "Soft steamed rice cakes served with chutney and sambar",
+        "category": "Breakfast",
+        "recipe": "1. Soak rice and dal\n2. Grind and ferment batter\n3. Steam in idli molds",
+        "ingredients": ["Rice", "Urad Dal", "Salt", "Oil"],
+        "nutritionalInfo": {
+          "calories": 220,
+          "protein": "6g",
+          "carbs": "40g",
+          "fat": "2g"
+        }
+      },
+      {
+        "id": 16,
+        "name": "Besan Chilla",
+        "price": 5.99,
+        "rating": 4.6,
+        "image": "img/besan chilla.jpeg",
+        "description": "Savory gram flour pancakes with onions and spices",
+        "category": "Breakfast",
+        "recipe": "1. Mix besan with water and spices\n2. Add chopped veggies\n3. Cook like pancakes on tawa",
+        "ingredients": ["Besan", "Onions", "Green Chilies", "Spices", "Oil"],
+        "nutritionalInfo": {
+          "calories": 280,
+          "protein": "10g",
+          "carbs": "30g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 17,
+        "name": "Methi Thepla",
+        "price": 5.49,
+        "rating": 4.5,
+        "image": "img/methi thepla.jpeg",
+        "description": "Gujarati flatbread made with fenugreek leaves and spices",
+        "category": "Breakfast",
+        "recipe": "1. Mix flour with methi and spices\n2. Knead dough\n3. Roll and cook on tawa",
+        "ingredients": ["Wheat Flour", "Methi Leaves", "Spices", "Yogurt", "Oil"],
+        "nutritionalInfo": {
+          "calories": 270,
+          "protein": "7g",
+          "carbs": "35g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 18,
+        "name": "Sabudana Khichdi",
+        "price": 6.49,
+        "rating": 4.6,
+        "image": "img/sabudana khichdi.jpeg",
+        "description": "Sago cooked with peanuts and potatoes, perfect for fasting",
+        "category": "Breakfast",
+        "recipe": "1. Soak sabudana\n2. Sauté potatoes, spices, and peanuts\n3. Mix in sabudana",
+        "ingredients": ["Sabudana", "Potatoes", "Peanuts", "Spices", "Oil"],
+        "nutritionalInfo": {
+          "calories": 330,
+          "protein": "5g",
+          "carbs": "55g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 19,
+        "name": "Moong Dal Cheela",
+        "price": 6.99,
+        "rating": 4.7,
+        "image": "img/moong dal cheela.jpeg",
+        "description": "Protein-rich savory pancakes made from moong dal batter",
+        "category": "Breakfast",
+        "recipe": "1. Soak and blend moong dal\n2. Add spices and veggies\n3. Cook on tawa like pancakes",
+        "ingredients": ["Moong Dal", "Spices", "Vegetables", "Oil"],
+        "nutritionalInfo": {
+          "calories": 290,
+          "protein": "14g",
+          "carbs": "32g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 20,
+        "name": "Pesarattu",
+        "price": 6.49,
+        "rating": 4.5,
+        "image": "img/pesarattu.jpeg",
+        "description": "Andhra special green gram dosa served with ginger chutney",
+        "category": "Breakfast",
+        "recipe": "1. Soak green gram\n2. Blend into batter with spices\n3. Cook like dosa on tawa",
+        "ingredients": ["Green Gram", "Ginger", "Green Chilies", "Oil"],
+        "nutritionalInfo": {
+          "calories": 310,
+          "protein": "12g",
+          "carbs": "40g",
+          "fat": "8g"
+        }
+      },
+      {
+        "id": 21,
+        "name": "Paneer Tikka",
+        "price": 9.99,
+        "rating": 4.8,
+        "image": "img/paneer tikka.jpeg",
+        "description": "Grilled cubes of marinated paneer with vegetables",
+        "category": "Appetizer",
+        "recipe": "1. Marinate paneer and veggies\n2. Skewer and grill or bake\n3. Serve with mint chutney",
+        "ingredients": ["Paneer", "Bell Peppers", "Yogurt", "Spices"],
+        "nutritionalInfo": {
+          "calories": 320,
+          "protein": "16g",
+          "carbs": "12g",
+          "fat": "22g"
+        }
+      },
+      {
+        "id": 22,
+        "name": "Hara Bhara Kabab",
+        "price": 7.49,
+        "rating": 4.6,
+        "image": "img/hara bhara kabab.jpeg",
+        "description": "Green vegetable patties made with spinach and peas",
+        "category": "Appetizer",
+        "recipe": "1. Cook and mash spinach, peas & potato\n2. Mix with spices and form patties\n3. Shallow fry",
+        "ingredients": ["Spinach", "Green Peas", "Potato", "Spices"],
+        "nutritionalInfo": {
+          "calories": 200,
+          "protein": "6g",
+          "carbs": "25g",
+          "fat": "8g"
+        }
+      },
+      {
+        "id": 23,
+        "name": "Vegetable Samosa",
+        "price": 5.99,
+        "rating": 4.7,
+        "image": "img/vegetable samosa.jpeg",
+        "description": "Crispy pastry filled with spicy potato and peas",
+        "category": "Appetizer",
+        "recipe": "1. Prepare dough & stuffing\n2. Fill and shape\n3. Deep fry until golden",
+        "ingredients": ["Potatoes", "Peas", "Flour", "Spices", "Oil"],
+        "nutritionalInfo": {
+          "calories": 260,
+          "protein": "5g",
+          "carbs": "35g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 24,
+        "name": "Dhokla",
+        "price": 6.49,
+        "rating": 4.5,
+        "image": "img/dhokla.jpeg",
+        "description": "Soft and fluffy steamed snack from Gujarat",
+        "category": "Appetizer",
+        "recipe": "1. Prepare batter\n2. Steam in tray\n3. Temper with mustard seeds and serve",
+        "ingredients": ["Gram Flour", "Yogurt", "Spices", "Eno"],
+        "nutritionalInfo": {
+          "calories": 150,
+          "protein": "6g",
+          "carbs": "20g",
+          "fat": "5g"
+        }
+      },
+      {
+        "id": 25,
+        "name": "Aloo Tikki",
+        "price": 5.49,
+        "rating": 4.6,
+        "image": "img/aloo tikki.jpeg",
+        "description": "Spicy mashed potato patties, shallow fried to crisp",
+        "category": "Appetizer",
+        "recipe": "1. Mash potatoes with spices\n2. Form tikkis\n3. Shallow fry until golden",
+        "ingredients": ["Potatoes", "Breadcrumbs", "Spices", "Oil"],
+        "nutritionalInfo": {
+          "calories": 240,
+          "protein": "4g",
+          "carbs": "30g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 26,
+        "name": "Corn Chaat",
+        "price": 4.99,
+        "rating": 4.5,
+        "image": "img/corn chaat.jpeg",
+        "description": "Sweet corn mixed with tangy chaat masala and herbs",
+        "category": "Appetizer",
+        "recipe": "1. Boil corn\n2. Mix with spices, onions, lemon juice and coriander\n3. Serve warm",
+        "ingredients": ["Sweet Corn", "Onions", "Lemon", "Chaat Masala"],
+        "nutritionalInfo": {
+          "calories": 180,
+          "protein": "4g",
+          "carbs": "28g",
+          "fat": "5g"
+        }
+      },
+      {
+        "id": 27,
+        "name": "Veg Spring Rolls",
+        "price": 7.99,
+        "rating": 4.4,
+        "image": "img/veg spring rolls.jpeg",
+        "description": "Crispy rolls filled with spiced vegetables",
+        "category": "Appetizer",
+        "recipe": "1. Prepare veggie filling\n2. Fill wrappers\n3. Deep fry until golden",
+        "ingredients": ["Cabbage", "Carrot", "Capsicum", "Spring Roll Sheets", "Oil"],
+        "nutritionalInfo": {
+          "calories": 300,
+          "protein": "5g",
+          "carbs": "30g",
+          "fat": "15g"
+        }
+      },
+      {
+        "id": 28,
+        "name": "Stuffed Mushrooms",
+        "price": 8.49,
+        "rating": 4.5,
+        "image": "img/stuffed mushrooms.jpeg",
+        "description": "Mushrooms filled with spiced paneer and baked",
+        "category": "Appetizer",
+        "recipe": "1. Remove mushroom stems\n2. Stuff with paneer mixture\n3. Bake or air fry",
+        "ingredients": ["Mushrooms", "Paneer", "Spices", "Herbs"],
+        "nutritionalInfo": {
+          "calories": 220,
+          "protein": "10g",
+          "carbs": "8g",
+          "fat": "16g"
+        }
+      },
+      {
+        "id": 29,
+        "name": "Masala Papad",
+        "price": 3.99,
+        "rating": 4.3,
+        "image": "img/masala papad.jpeg",
+        "description": "Crispy papad topped with onions, tomatoes, and masala",
+        "category": "Appetizer",
+        "recipe": "1. Roast papad\n2. Top with onion, tomato, coriander\n3. Sprinkle chaat masala",
+        "ingredients": ["Papad", "Onion", "Tomato", "Chaat Masala", "Lemon"],
+        "nutritionalInfo": {
+          "calories": 120,
+          "protein": "2g",
+          "carbs": "10g",
+          "fat": "7g"
+        }
+      },
+      {
+        "id": 30,
+        "name": "Mini Dahi Puri",
+        "price": 6.99,
+        "rating": 4.7,
+        "image": "img/mini dahi puri.jpeg",
+        "description": "Crispy puris filled with curd, chutneys and masalas",
+        "category": "Appetizer",
+        "recipe": "1. Prepare puris\n2. Fill with potato, curd, chutney\n3. Sprinkle sev and masala",
+        "ingredients": ["Puris", "Curd", "Tamarind Chutney", "Spices", "Sev"],
+        "nutritionalInfo": {
+          "calories": 250,
+          "protein": "6g",
+          "carbs": "30g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 31,
+        "name": "Gulab Jamun",
+        "price": 6.49,
+        "rating": 4.9,
+        "image": "img/gulab jamun.jpeg",
+        "description": "Soft khoya balls soaked in cardamom-infused sugar syrup",
+        "category": "Dessert",
+        "recipe": "1. Make dough from khoya\n2. Fry until golden brown\n3. Soak in warm sugar syrup",
+        "ingredients": ["Khoya", "Sugar", "Cardamom", "Ghee"],
+        "nutritionalInfo": {
+          "calories": 300,
+          "protein": "5g",
+          "carbs": "40g",
+          "fat": "15g"
+        }
+      },
+      {
+        "id": 32,
+        "name": "Rasgulla",
+        "price": 5.99,
+        "rating": 4.8,
+        "image": "img/rasgulla.jpeg",
+        "description": "Spongy balls made from chhena soaked in light sugar syrup",
+        "category": "Dessert",
+        "recipe": "1. Prepare chhena balls\n2. Boil in sugar syrup\n3. Cool and serve chilled",
+        "ingredients": ["Chhena", "Sugar", "Water", "Cardamom"],
+        "nutritionalInfo": {
+          "calories": 180,
+          "protein": "6g",
+          "carbs": "30g",
+          "fat": "4g"
+        }
+      },
+      {
+        "id": 33,
+        "name": "Kaju Katli",
+        "price": 8.99,
+        "rating": 4.7,
+        "image": "img/kaju katli.jpeg",
+        "description": "Thin diamond-shaped cashew fudge, rich and creamy",
+        "category": "Dessert",
+        "recipe": "1. Grind cashews to powder\n2. Cook with sugar and water\n3. Roll and cut",
+        "ingredients": ["Cashew Nuts", "Sugar", "Cardamom", "Ghee"],
+        "nutritionalInfo": {
+          "calories": 250,
+          "protein": "5g",
+          "carbs": "22g",
+          "fat": "15g"
+        }
+      },
+      {
+        "id": 34,
+        "name": "Moong Dal Halwa",
+        "price": 7.49,
+        "rating": 4.6,
+        "image": "img/moong dal halwa.jpeg",
+        "description": "Rich halwa made with moong dal, ghee, and dry fruits",
+        "category": "Dessert",
+        "recipe": "1. Soak and grind moong dal\n2. Cook in ghee\n3. Add sugar and milk, cook till aromatic",
+        "ingredients": ["Moong Dal", "Ghee", "Milk", "Sugar", "Dry Fruits"],
+        "nutritionalInfo": {
+          "calories": 360,
+          "protein": "8g",
+          "carbs": "40g",
+          "fat": "18g"
+        }
+      },
+      {
+        "id": 35,
+        "name": "Gajar ka Halwa",
+        "price": 6.99,
+        "rating": 4.9,
+        "image": "img/carrot halwa.jpeg",
+        "description": "Slow-cooked grated carrots with milk and ghee",
+        "category": "Dessert",
+        "recipe": "1. Cook carrots in ghee\n2. Add milk and simmer\n3. Add sugar and dry fruits",
+        "ingredients": ["Carrot", "Milk", "Sugar", "Ghee", "Cardamom"],
+        "nutritionalInfo": {
+          "calories": 280,
+          "protein": "6g",
+          "carbs": "30g",
+          "fat": "14g"
+        }
+      },
+      {
+        "id": 36,
+        "name": "Rice Kheer",
+        "price": 5.49,
+        "rating": 4.7,
+        "image": "img/rice kheer.jpeg",
+        "description": "Creamy rice pudding flavored with cardamom and saffron",
+        "category": "Dessert",
+        "recipe": "1. Cook rice in milk\n2. Add sugar, cardamom, and saffron\n3. Simmer until thickened",
+        "ingredients": ["Rice", "Milk", "Sugar", "Cardamom", "Saffron"],
+        "nutritionalInfo": {
+          "calories": 240,
+          "protein": "6g",
+          "carbs": "35g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 37,
+        "name": "Sandesh",
+        "price": 6.49,
+        "rating": 4.6,
+        "image": "img/sandesh.jpeg",
+        "description": "Delicate Bengali sweet made from fresh paneer",
+        "category": "Dessert",
+        "recipe": "1. Knead chhena\n2. Cook with sugar lightly\n3. Shape and chill",
+        "ingredients": ["Chhena", "Sugar", "Cardamom", "Rose Water"],
+        "nutritionalInfo": {
+          "calories": 210,
+          "protein": "7g",
+          "carbs": "20g",
+          "fat": "10g"
+        }
+      },
+      {
+        "id": 38,
+        "name": "Jalebi",
+        "price": 5.99,
+        "rating": 4.8,
+        "image": "img/jalebi.jpeg",
+        "description": "Deep-fried spirals soaked in saffron sugar syrup",
+        "category": "Dessert",
+        "recipe": "1. Make fermented batter\n2. Pipe in oil in spiral shape\n3. Soak in warm sugar syrup",
+        "ingredients": ["Flour", "Sugar", "Yogurt", "Saffron"],
+        "nutritionalInfo": {
+          "calories": 300,
+          "protein": "4g",
+          "carbs": "40g",
+          "fat": "14g"
+        }
+      },
+      {
+        "id": 39,
+        "name": "Rasmalai",
+        "price": 7.99,
+        "rating": 4.9,
+        "image": "img/rasmalai.jpeg",
+        "description": "Soft paneer patties in creamy saffron milk",
+        "category": "Dessert",
+        "recipe": "1. Make rasgullas\n2. Soak in thickened saffron milk\n3. Garnish with dry fruits",
+        "ingredients": ["Chhena", "Milk", "Sugar", "Saffron", "Cardamom"],
+        "nutritionalInfo": {
+          "calories": 340,
+          "protein": "10g",
+          "carbs": "28g",
+          "fat": "18g"
+        }
+      },
+      {
+        "id": 40,
+        "name": "Besan Ladoo",
+        "price": 4.99,
+        "rating": 4.5,
+        "image": "img/besan ladoo.jpeg",
+        "description": "Roasted gram flour sweets shaped into round balls",
+        "category": "Dessert",
+        "recipe": "1. Roast besan in ghee\n2. Mix with sugar and cardamom\n3. Shape into balls",
+        "ingredients": ["Besan", "Ghee", "Sugar", "Cardamom"],
+        "nutritionalInfo": {
+          "calories": 270,
+          "protein": "6g",
+          "carbs": "20g",
+          "fat": "18g"
+        }
+      },
+      {
+        "id": 41,
+        "name": "Masala Chai",
+        "price": 2.99,
+        "rating": 4.9,
+        "image": "img/masala chai.jpeg",
+        "description": "Strong Indian tea brewed with spices and milk",
+        "category": "Beverage",
+        "recipe": "1. Boil water with tea leaves and spices\n2. Add milk and simmer\n3. Strain and serve hot",
+        "ingredients": ["Tea Leaves", "Milk", "Cardamom", "Ginger", "Cloves"],
+        "nutritionalInfo": {
+          "calories": 120,
+          "protein": "4g",
+          "carbs": "15g",
+          "fat": "5g"
+        }
+      },
+      {
+        "id": 42,
+        "name": "Sweet Lassi",
+        "price": 3.49,
+        "rating": 4.8,
+        "image": "img/sweet lassi.jpeg",
+        "description": "Thick yogurt-based sweet drink, chilled and refreshing",
+        "category": "Beverage",
+        "recipe": "1. Blend yogurt, sugar, water, and cardamom\n2. Chill and serve topped with dry fruits",
+        "ingredients": ["Yogurt", "Sugar", "Cardamom", "Water"],
+        "nutritionalInfo": {
+          "calories": 180,
+          "protein": "6g",
+          "carbs": "22g",
+          "fat": "6g"
+        }
+      },
+      {
+        "id": 43,
+        "name": "Mango Lassi",
+        "price": 3.99,
+        "rating": 4.9,
+        "image": "img/mango lassi.jpeg",
+        "description": "A creamy blend of mango pulp, yogurt, and sugar",
+        "category": "Beverage",
+        "recipe": "1. Blend mango pulp, yogurt, sugar, and a bit of water\n2. Chill and serve",
+        "ingredients": ["Mango", "Yogurt", "Sugar", "Water"],
+        "nutritionalInfo": {
+          "calories": 200,
+          "protein": "5g",
+          "carbs": "30g",
+          "fat": "5g"
+        }
+      },
+      {
+        "id": 44,
+        "name": "Filter Coffee",
+        "price": 2.49,
+        "rating": 4.7,
+        "image": "img/filter coffee.jpeg",
+        "description": "South Indian strong decoction coffee with milk",
+        "category": "Beverage",
+        "recipe": "1. Brew coffee decoction in filter\n2. Mix with hot milk and sugar\n3. Serve in steel tumbler",
+        "ingredients": ["Coffee Powder", "Milk", "Sugar", "Water"],
+        "nutritionalInfo": {
+          "calories": 100,
+          "protein": "3g",
+          "carbs": "12g",
+          "fat": "4g"
+        }
+      },
+      {
+        "id": 45,
+        "name": "Aam Panna",
+        "price": 2.99,
+        "rating": 4.6,
+        "image": "img/aam panna.jpeg",
+        "description": "Refreshing raw mango drink with mint and spices",
+        "category": "Beverage",
+        "recipe": "1. Boil raw mangoes and extract pulp\n2. Mix with spices and chill\n3. Serve with mint",
+        "ingredients": ["Raw Mango", "Cumin", "Mint", "Sugar", "Black Salt"],
+        "nutritionalInfo": {
+          "calories": 90,
+          "protein": "1g",
+          "carbs": "18g",
+          "fat": "1g"
+        }
+      },
+      {
+        "id": 46,
+        "name": "Nimbu Pani",
+        "price": 1.99,
+        "rating": 4.8,
+        "image": "img/nimbu pani.jpeg",
+        "description": "Lemon juice mixed with water, sugar, and salt",
+        "category": "Beverage",
+        "recipe": "1. Squeeze lemon into water\n2. Add sugar, salt, and mix\n3. Serve chilled with mint",
+        "ingredients": ["Lemon", "Sugar", "Salt", "Water", "Mint"],
+        "nutritionalInfo": {
+          "calories": 70,
+          "protein": "0g",
+          "carbs": "17g",
+          "fat": "0g"
+        }
+      },
+      {
+        "id": 47,
+        "name": "Thandai",
+        "price": 4.49,
+        "rating": 4.7,
+        "image": "img/thandai.jpeg",
+        "description": "Milk-based festive drink flavored with nuts and spices",
+        "category": "Beverage",
+        "recipe": "1. Grind nuts and spices into paste\n2. Mix with milk and sugar\n3. Chill and garnish with rose petals",
+        "ingredients": ["Milk", "Almonds", "Fennel", "Poppy Seeds", "Sugar"],
+        "nutritionalInfo": {
+          "calories": 220,
+          "protein": "6g",
+          "carbs": "20g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 48,
+        "name": "Badam Milk",
+        "price": 3.99,
+        "rating": 4.8,
+        "image": "img/badam milk.jpeg",
+        "description": "Sweet almond-flavored milk served hot or cold",
+        "category": "Beverage",
+        "recipe": "1. Blend almonds to paste\n2. Cook with milk, saffron, and sugar\n3. Serve warm or chilled",
+        "ingredients": ["Milk", "Almonds", "Saffron", "Sugar"],
+        "nutritionalInfo": {
+          "calories": 210,
+          "protein": "7g",
+          "carbs": "18g",
+          "fat": "12g"
+        }
+      },
+      {
+        "id": 49,
+        "name": "Jaljeera",
+        "price": 2.49,
+        "rating": 4.5,
+        "image": "img/jaljeera.jpeg",
+        "description": "Tangy spiced drink with cumin, mint, and lemon",
+        "category": "Beverage",
+        "recipe": "1. Mix spices and herbs with water\n2. Add lemon juice and chill\n3. Serve with ice",
+        "ingredients": ["Cumin", "Mint", "Lemon", "Black Salt", "Water"],
+        "nutritionalInfo": {
+          "calories": 40,
+          "protein": "0g",
+          "carbs": "10g",
+          "fat": "0g"
+        }
+      },
+      {
+        "id": 50,
+        "name": "Coconut Water",
+        "price": 2.99,
+        "rating": 4.9,
+        "image": "img/coconut water.jpeg",
+        "description": "Natural, sweet, and refreshing drink from green coconuts",
+        "category": "Beverage",
+        "recipe": "1. Chill fresh coconut\n2. Crack open and serve cold\n3. Optional: add lemon juice",
+        "ingredients": ["Tender Coconut Water"],
+        "nutritionalInfo": {
+          "calories": 45,
+          "protein": "1g",
+          "carbs": "11g",
+          "fat": "0g"
+        }
+      }
+]

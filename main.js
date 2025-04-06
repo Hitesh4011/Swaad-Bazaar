@@ -1,122 +1,14 @@
 // Sample data for featured dishes
-const featuredDishes = [
-    {
-        id: 1,
-        name: "Butter Chicken",
-        price: 15.99,
-        rating: 4.8,
-        image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=500&q=80",
-        description: "Tender chicken in a rich, creamy tomato sauce",
-        category: "Main Course",
-        recipe: "1. Marinate chicken in yogurt and spices\n2. Grill until charred\n3. Simmer in rich tomato gravy\n4. Finish with cream and butter",
-        ingredients: ["Chicken", "Tomatoes", "Cream", "Butter", "Spices"],
-        nutritionalInfo: {
-            calories: 450,
-            protein: "30g",
-            carbs: "12g",
-            fat: "28g"
-        }
-    },
-    {
-        id: 2,
-        name: "Paneer Tikka",
-        price: 12.99,
-        rating: 4.5,
-        image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=500&q=80",
-        description: "Grilled cottage cheese with aromatic spices",
-        category: "Appetizer"
-    },
-    {
-        id: 3,
-        name: "Chicken Biryani",
-        price: 16.99,
-        rating: 4.9,
-        image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80",
-        description: "Fragrant rice dish with tender chicken and spices",
-        category: "Main Course"
-    },
-    {
-        id: 4,
-        name: "Masala Dosa",
-        price: 10.99,
-        rating: 4.7,
-        image: "https://images.unsplash.com/photo-1630409346824-4f0e7b080087?auto=format&fit=crop&w=500&q=80",
-        description: "Crispy rice crepe filled with spiced potatoes",
-        category: "Breakfast"
-    },
-    {
-        id: 5,
-        name: "Gulab Jamun",
-        price: 6.99,
-        rating: 4.6,
-        image: "https://images.unsplash.com/photo-1589119908995-c6837fa14848?auto=format&fit=crop&w=500&q=80",
-        description: "Sweet milk dumplings in rose syrup",
-        category: "Dessert"
-    },
-    {
-        id: 6,
-        name: "Palak Paneer",
-        price: 13.99,
-        rating: 4.4,
-        image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80",
-        description: "Cottage cheese in creamy spinach gravy",
-        category: "Main Course"
-    },
-    {
-        id: 7,
-        name: "Mango Lassi",
-        price: 4.99,
-        rating: 4.7,
-        image: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?auto=format&fit=crop&w=500&q=80",
-        description: "Refreshing yogurt-based mango drink",
-        category: "Beverage"
-    },
-    {
-        id: 8,
-        name: "Samosa",
-        price: 5.99,
-        rating: 4.6,
-        image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80",
-        description: "Crispy pastry filled with spiced potatoes and peas",
-        category: "Appetizer"
-    },
-    {
-        id: 9,
-        name: "Tandoori Roti",
-        price: 2.99,
-        rating: 4.5,
-        image: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?auto=format&fit=crop&w=500&q=80",
-        description: "Whole wheat bread baked in tandoor",
-        category: "Bread"
-    },
-    {
-        id: 10,
-        name: "Rasmalai",
-        price: 7.99,
-        rating: 4.8,
-        image: "https://images.unsplash.com/photo-1589119908995-c6837fa14848?auto=format&fit=crop&w=500&q=80",
-        description: "Soft cottage cheese dumplings in sweet milk",
-        category: "Dessert"
-    },
-    {
-        id: 11,
-        name: "Masala Chai",
-        price: 3.99,
-        rating: 4.6,
-        image: "https://images.unsplash.com/photo-1561336526-2914f13ceb36?auto=format&fit=crop&w=500&q=80",
-        description: "Spiced Indian tea with milk",
-        category: "Beverage"
-    },
-    {
-        id: 12,
-        name: "Veg Biryani",
-        price: 13.99,
-        rating: 4.5,
-        image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80",
-        description: "Fragrant rice with mixed vegetables and spices",
-        category: "Main Course"
-    }
-];
+const featuredDishes = [];
+
+fetch('dishes.json')
+  .then(response => response.json())
+  .then(data => {
+    featuredDishes.push(...data);
+
+    displayDishesByCategory();
+  })
+  .catch(error => console.error('Failed to load dishes:', error));
 
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
