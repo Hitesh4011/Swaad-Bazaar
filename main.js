@@ -345,72 +345,82 @@ function closeCheckoutModal() {
     checkoutModal.classList.add('hidden');
 }
 
+function goToPayment(step) {
+    const deliveryForm = document.getElementById('delivery-form');
 
+    // Prevent default form submission if triggered by a form submit button
+    if (event) event.preventDefault();
 
-// Go to a specific step in the checkout process
-function goToStep(prevstep, step) {
+    const inputs = deliveryForm.querySelectorAll('input');
+    const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+
+    if (!allFilled) {
+        showNotification('Please fill all fields before proceeding.', 'error');
+        return;
+    }
+
     const steps = document.querySelectorAll('.step');
     const forms = document.querySelectorAll('.checkout-form');
 
-    // Check if all fields are filled using a simpler approach
-    if (prevstep !== false) {
-        const form = document.querySelector(`#${prevstep}-form`);
-        const inputs = form.querySelectorAll('input');
-        const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
-
-        if (!allFilled) {
-            showNotification('Please fill all fields before proceeding.', 'error');
-            return;
-        } else if (step === false) {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.length = 0;
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            populateCartItems();
-            showNotification('Your order is placed successfully!', 'success');
-            closeCheckoutModal();
-            alert('Your order is placed successfully \n \n Thank you for ordering with us \n Your order id is 1234567890');
-
-            // Reset to the first step and clear all form inputs
-            steps.forEach(s => {
-                s.classList.toggle('active', s.dataset.step === 'delivery');
-            });
-
-            forms.forEach(f => {
-                f.classList.toggle('active', f.id === 'delivery-form');
-                const inputs = f.querySelectorAll('input');
-                inputs.forEach(input => input.value = ''); // Clear all input fields
-            });
-
-            return;
-        }
-        steps.forEach(s => {
-        s.classList.toggle('active', s.dataset.step === step);
-        });
-
-        forms.forEach(f => {
-            f.classList.toggle('active', f.id === `${step}-form`);
-        });
-    }
-
+    // Switch to the payment step visually
     steps.forEach(s => {
-      s.classList.toggle('active', s.dataset.step === step);
-      });
+        s.classList.toggle('active', s.dataset.step === 'payment');
+    });
 
-      forms.forEach(f => {
-          f.classList.toggle('active', f.id === `${step}-form`);
-      });
+    forms.forEach(f => {
+        f.classList.toggle('active', f.id === 'payment-form');
+    });
 }
 
-// Go to the previous step in the checkout process
-function goToPreviousStep() {
+
+function order() {
+    const paymentForm = document.getElementById('payment-form');
+
+    const paymentInputs = paymentForm.querySelectorAll('input');
+    const allPaymentFilled = Array.from(paymentInputs).every(input => input.value.trim() !== '');
+
+    if (!allPaymentFilled) {
+        showNotification('Please fill all fields before proceeding.', 'error');
+        return;
+    }
+
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    cart.length = 0;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    populateCartItems();
+    showNotification('Your order is placed successfully!', 'success');
+    closeCheckoutModal();
+    alert('Your order is placed successfully \n \n Thank you for ordering with us \n Your order id is 1234567890');
+
+    // Reset to the first step and clear all form inputs
+    steps.forEach(s => {
+        s.classList.toggle('active', s.dataset.step === 'delivery');
+    });
+
+    forms.forEach(f => {
+        f.classList.toggle('active', f.id === 'delivery-form');
+        const inputs = f.querySelectorAll('input');
+        inputs.forEach(input => input.value = ''); // Clear all input fields
+    });
+}
+
+function goToPrev(step) {
     const activeStep = document.querySelector('.step.active');
     if (!activeStep) return;
 
-    const previousStep = activeStep.previousElementSibling;
-    if (previousStep && previousStep.classList.contains('step')) {
-        goToStep(false ,previousStep.dataset.step);
-    }
+    const steps = document.querySelectorAll('.step');
+    const forms = document.querySelectorAll('.checkout-form');
+
+    steps.forEach(s => {
+        s.classList.toggle('active', s.dataset.step === 'delivery');
+    });
+
+    forms.forEach(f => {
+        f.classList.toggle('active', f.id === 'delivery-form');
+    });
 }
 
 // Attach the cart modal functionality to the "Add to Cart" button
