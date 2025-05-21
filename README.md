@@ -43,5 +43,4 @@ SwaadBazaar is a simple **PHP-based food ordering website** designed for the Swa
 5. Create a Pull Request
 
 ## Contact
-📧 **Email:** your-email@example.com
-🌍 **Website:** [yourwebsite.com](http://yourwebsite.com)
+📧 **Email:** hiteshprajapati4011@gmail.com
